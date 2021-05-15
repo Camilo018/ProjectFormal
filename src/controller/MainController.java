@@ -1,18 +1,28 @@
 package controller;
 
-import com.formdev.flatlaf.intellijthemes.FlatGradiantoMidnightBlueIJTheme;
 
-import javax.swing.*;
+import model.DataManager;
+import view.MainView;
 
-public class MainController {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-    public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel( new FlatGradiantoMidnightBlueIJTheme() );
-            new MainController();
-        } catch( Exception ex ) {
-            System.err.println( "Failed to initialize LaF" );
-        }
+public class MainController implements ActionListener {
+
+    private MainView mainView;
+    private DataManager dataManager;
+
+    public MainController() {
+        this.mainControllerInstances();
     }
 
+    private void mainControllerInstances() {
+        this.dataManager = new DataManager();
+        this.mainView = new MainView(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }

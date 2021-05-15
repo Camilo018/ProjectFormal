@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="flatlaf-demo-0.42" level="project" />
+    <orderEntry type="library" name="KGradientPanel" level="project" />
   </component>
 </module>
