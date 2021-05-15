@@ -16,6 +16,10 @@ public class graphNode<T> {
         this.associations.add(association);
     }
 
+    public void removeAssociation (T association){
+        this.associations.remove(association);
+    }
+
     public T getData() {
         return data;
     }
