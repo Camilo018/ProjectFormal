@@ -10,6 +10,9 @@ public class Status {
         this.statusType = statusType;
     }
 
+    public Status() {
+    }
+
     public StatusType getStatusType() {
         return statusType;
     }
