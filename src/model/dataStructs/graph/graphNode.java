@@ -1,6 +1,5 @@
 package model.dataStructs.graph;
 
-import model.dataStructs.list.SimpleList;
 
 import java.util.LinkedList;
 
