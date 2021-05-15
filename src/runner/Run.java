@@ -2,6 +2,8 @@ package runner;
 
 import com.formdev.flatlaf.intellijthemes.FlatGradiantoMidnightBlueIJTheme;
 import controller.MainController;
+import model.Formalism;
+import model.Transition;
 
 import javax.swing.*;
 
