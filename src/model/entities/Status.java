@@ -1,9 +1,9 @@
-package model;
+package model.entities;
 
 public class Status {
 
     private  String value;
-    private  StatusType statusType;
+    private StatusType statusType;
 
     public Status(String value, StatusType statusType) {
         this.value = value;
@@ -17,4 +17,5 @@ public class Status {
     public String getValue() {
         return value;
     }
+
 }
