@@ -10,7 +10,4 @@ public class Automaton {
         this.formalism = new Formalism();
     }
 
-
-
-
 }
