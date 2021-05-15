@@ -2,13 +2,15 @@ package model.dataStructs.graph;
 
 import model.dataStructs.list.SimpleList;
 
+import java.util.LinkedList;
+
 public class graphNode<T> {
     public T data;
-    public SimpleList<T> associations;
+    public LinkedList<T> associations;
 
     public graphNode(T data) {
         this.data = data;
-        this.associations = new SimpleList<>();
+        this.associations = new LinkedList<>();
     }
 
     public void addAssociation (T association){
@@ -19,7 +21,7 @@ public class graphNode<T> {
         return data;
     }
 
-    public SimpleList<T> getAssociations() {
+    public LinkedList<T> getAssociations() {
         return associations;
     }
 }
