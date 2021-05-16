@@ -1,13 +1,13 @@
 package model.manager;
 
 
-import model.dataStructs.graph.graph;
+import model.dataStructs.graph.Graph;
 import model.entities.Status;
 
 public class Automaton {
 
     private Formalism formalism;
-    private graph<Status, String> automatonGraph;
+    private Graph<Status, String> automatonGraph;
 
     public Automaton() {
         this.formalism = new Formalism();
@@ -18,7 +18,7 @@ public class Automaton {
     }
 
     public void addTransitions (Status originStatus, String symbol,Status destinationStatus) throws IndexOutOfBoundsException{
-        automatonGraph.addAssociation(originStatus,destinationStatus,symbol);
+        automatonGraph.addAssociation(originStatus, destinationStatus, symbol);
     }
 
 }
