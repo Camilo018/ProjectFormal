@@ -33,13 +33,7 @@ public class Graph<T,V>{
     public Graph <T, V> getAdjacentByMagnitude(T data,V magnitude){
         LinkedList<GraphNode<T,V>> aux = this.graph;
         Graph <T, V> subGraph = new Graph<>();
-        int i = 0;
-        for (GraphNode node: aux) {
-            if (node.getData().equals(data)){
-                i = aux.indexOf(node);
-                break;
-            }
-        }
+        int i = getIndex(aux, data);
         LinkedList<Association<T,V>> associationsAux = aux.get(i).getAssociations();
         for (Association association: associationsAux) {
             if (association.getMagnitude().equals(magnitude)){
@@ -49,6 +43,18 @@ public class Graph<T,V>{
         }
         return subGraph;
     }
+
+    private int getIndex( LinkedList<GraphNode<T,V>> aux, T data) {
+        int i = 0;
+        for (GraphNode node: aux) {
+            if (node.getData().equals(data)){
+                i = aux.indexOf(node);
+                break;
+            }
+        }
+        return i;
+    }
+
     public void removeNode(T data) throws IndexOutOfBoundsException {
         int i = 0;
         for (GraphNode node: this.graph) {
