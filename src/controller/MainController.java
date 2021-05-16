@@ -5,6 +5,7 @@ import view.MainView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class MainController implements ActionListener {
 
@@ -15,7 +16,9 @@ public class MainController implements ActionListener {
     }
 
     private void mainControllerInstances() {
-        this.mainView = new MainView(this);
+        ArrayList<String> states = new ArrayList<>();
+        ArrayList<String> alphabet = new ArrayList<>();
+        this.mainView = new MainView(states, alphabet, this);
     }
 
     @Override
@@ -44,16 +47,35 @@ public class MainController implements ActionListener {
                 break;
 
             case DELETE_ELEMENT:
+                this.deleteElement();
                 break;
             case ADD_ELEMENT:
                 this.addElement();
+                break;
+
+            case FINAL:
+                this.finalState();
+                break;
+            case INITIAL:
+                this.initialState();
                 break;
                 
         }
     }
 
+    private void initialState() {
+        this.mainView.initialState();
+    }
+
+    private void finalState() {
+        this.mainView.finalState();
+    }
+
+    private void deleteElement() {
+    }
+
     private void addElement() {
-        System.out.println("Entro");
+        this.mainView.addElement();
     }
 
     private void deleteTransition() {

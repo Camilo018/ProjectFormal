@@ -6,14 +6,18 @@ import java.awt.*;
 
 public class Constants {
 
-    public static final int MIN_WIDTH = 720 ;
+    //  public static final int MIN_WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+    //  public static final int MIN_HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+    public static final int MIN_WIDTH = 720;
     public static final int MIN_HEIGHT = 480;
+
+
     public static final String TITTLE_COLOR = "#FF1A43";
     public static final int MIN_WIDTH_PHONE = 400;
     public static final int MIN_HEIGHT_PHONE = 800;
-    public static Color COLOR_APP_DARK = new Color(37,36,39,200);
+    public static Color COLOR_APP_DARK = new Color(37, 36, 39, 200);
 
-    public static Font fontProject(int type,int Size) {
+    public static Font fontProject(int type, int Size) {
         Font fontProject = new Font("Montserrat", type, Size);
         return fontProject;
     }

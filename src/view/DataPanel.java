@@ -5,14 +5,15 @@ import utils.Constants;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class DataPanel extends JPanel {
 
     private MainDataPanel mainDataPanel;
 
 
-    public DataPanel(ActionListener actionListener) {
-        this.dataPanelInstances(actionListener);
+    public DataPanel(ArrayList<String> states, ArrayList<String> alphabet, ActionListener actionListener) {
+        this.dataPanelInstances(states, alphabet, actionListener);
         this.dataPanelFeatures();
         this.dataPanelInternalContent();
     }
@@ -27,11 +28,20 @@ public class DataPanel extends JPanel {
     }
 
 
-    private void dataPanelInstances(ActionListener actionListener) {
-        this.mainDataPanel = new MainDataPanel(actionListener);
+    private void dataPanelInstances(ArrayList<String> states, ArrayList<String> alphabet, ActionListener actionListener) {
+        this.mainDataPanel = new MainDataPanel(states, alphabet, actionListener);
     }
 
 
+    public void addElement() {
+        this.mainDataPanel.addElement();
+    }
 
+    public void initialState() {
+        this.mainDataPanel.initialState();
+    }
 
+    public void finalState() {
+        this.mainDataPanel.finalState();
+    }
 }

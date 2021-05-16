@@ -2,6 +2,7 @@ package view;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.*;
 
 
@@ -12,8 +13,8 @@ public class MainPanel extends JPanel {
     private Image resizeImage;
 
 
-    public MainPanel(ActionListener actionListener) {
-        this.mainPanelInstances(actionListener);
+    public MainPanel(ArrayList<String> states, ArrayList<String> alphabet, ActionListener actionListener) {
+        this.mainPanelInstances(states, alphabet, actionListener);
         this.mainPanelFeatures();
         this.mainPanelInternalContent();
     }
@@ -23,9 +24,9 @@ public class MainPanel extends JPanel {
         this.setBackground(Color.decode("#FAFAFA"));
     }
 
-    public void mainPanelInstances(ActionListener actionListener) {
+    public void mainPanelInstances(ArrayList<String> states, ArrayList<String> alphabet, ActionListener actionListener) {
         this.backGroundImage();
-        this.dataPanel = new DataPanel(actionListener);
+        this.dataPanel = new DataPanel(states, alphabet, actionListener);
         this.panelDraw = new PanelDraw();
     }
 
@@ -46,4 +47,15 @@ public class MainPanel extends JPanel {
         graphics.drawImage(resizeImage, 0, 0, this);
     }
 
+    public void addElement() {
+        this.dataPanel.addElement();
+    }
+
+    public void initialState() {
+        this.dataPanel.initialState();
+    }
+
+    public void finalState() {
+        this.dataPanel.finalState();
+    }
 }

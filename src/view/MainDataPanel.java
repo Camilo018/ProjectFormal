@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
+import java.util.ArrayList;
 
 public class MainDataPanel extends JPanel {
 
@@ -15,9 +16,9 @@ public class MainDataPanel extends JPanel {
     private DataPanelEnd dataPanelEnd;
 
 
-    public MainDataPanel(ActionListener actionListener) {
+    public MainDataPanel(ArrayList<String> states, ArrayList<String> alphabet, ActionListener actionListener) {
         this.mainDataPanelFeatures();
-        this.mainDataPanelInstances(actionListener);
+        this.mainDataPanelInstances(states, alphabet, actionListener);
         this.mainDataPanelInternalContent();
     }
 
@@ -29,10 +30,10 @@ public class MainDataPanel extends JPanel {
         this.setOpaque(false);
     }
 
-    private void mainDataPanelInstances(ActionListener actionListener) {
+    private void mainDataPanelInstances(ArrayList<String> states, ArrayList<String> alphabet, ActionListener actionListener) {
         this.backGroundImage = backGroundImage();
         this.dataPanelStart = new DataPanelStart(actionListener);
-        this.dataPanelEnd = new DataPanelEnd(actionListener);
+        this.dataPanelEnd = new DataPanelEnd(states, alphabet, actionListener);
     }
 
     private void mainDataPanelInternalContent() {
@@ -80,6 +81,18 @@ public class MainDataPanel extends JPanel {
         g2.setPaint(new GradientPaint(0.0f, 0.0f,Color.white,
                 0.0f, getHeight(), Color.white));
         g2.drawRoundRect(0, 0, getWidth()-2 , getHeight() -2, 18, 18);
+    }
+
+    public void addElement() {
+        this.dataPanelStart.addElement(this.dataPanelEnd.addElement());
+    }
+
+    public void initialState() {
+        this.dataPanelEnd.initialState();
+    }
+
+    public void finalState() {
+        this.dataPanelEnd.finalState();
     }
 }
 
