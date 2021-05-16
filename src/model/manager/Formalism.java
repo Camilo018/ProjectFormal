@@ -30,6 +30,7 @@ public class Formalism {
             return true;
         }
     }
+
     public State getInitialState(){
         State initialState = null;
         for (State state:states) {
@@ -40,6 +41,7 @@ public class Formalism {
         }
         return initialState;
     }
+
     public ArrayList<State> getFinalStates(){
         ArrayList<State> finalStates = new ArrayList<>();
         for (State state:states) {
@@ -49,6 +51,17 @@ public class Formalism {
         }
         return finalStates;
     }
+
+    public State getState(String value){
+        State state = null;
+        for (State stateList:this.states) {
+            if (stateList.getValue().equals(value)){
+                state = stateList.getStateByValue(value);
+            }
+        }
+        return state;
+    }
+
     public boolean haveFinalStates(){
         boolean haveFinal = false;
         for (State state:states) {

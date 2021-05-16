@@ -1,7 +1,5 @@
 package model.entities;
 
-import model.entities.State;
-
 public class Transition {
 
     private State initial;

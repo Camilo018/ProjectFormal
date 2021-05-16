@@ -12,8 +12,8 @@ public class Automaton {
     private Formalism formalism;
     private Graph<State, String> automatonGraph;
 
-    public Automaton() {
-        this.formalism = new Formalism();
+    public Automaton(Formalism formalism) {
+        this.formalism = formalism;
         addStates();
         addTransitions();
     }
@@ -22,7 +22,7 @@ public class Automaton {
         automatonGraph.add(state);
     }
 
-    public void addTransitions (State originState, String symbol, State destinationState) throws IndexOutOfBoundsException{
+    public void addTransition (State originState, String symbol, State destinationState) throws IndexOutOfBoundsException{
         automatonGraph.addAssociation(originState, destinationState, symbol);
     }
 
@@ -35,15 +35,24 @@ public class Automaton {
     }
     private void addStates (){
         this.automatonGraph = new Graph<>();
-        for (State state :formalism.getStates()) {
+        for (State state :this.formalism.getStates()) {
             this.automatonGraph.add(state);
         }
     }
     private void addTransitions () throws IndexOutOfBoundsException{
         for (Transition transition:formalism.getTransitions()) {
-            automatonGraph.removeAssociation(transition.getInitial(),transition.getResult(),transition.getSymbol());
+            automatonGraph.addAssociation(transition.getInitial(),transition.getResult(),transition.getSymbol());
         }
     }
+
+    public Graph<State, String> getAutomatonGraph() {
+        return automatonGraph;
+    }
+
+    public Formalism getFormalism() {
+        return formalism;
+    }
+
     public boolean checkWord (LinkedList <String> word){
         return true;
     }
