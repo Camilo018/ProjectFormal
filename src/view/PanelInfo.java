@@ -4,6 +4,7 @@ import utils.Constants;
 
 import javax.swing.*;
 import java.awt.*;
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 public class PanelInfo extends JScrollPane {
@@ -15,12 +16,15 @@ public class PanelInfo extends JScrollPane {
     private String finalizeHtml;
     private String tabSpace;
     private String info;
+=======
+>>>>>>> 6503ca7608f99f62a997cd06eaeb812fc27545cc
 
     private ArrayList<String> listStates;
     private ArrayList<String> listAlphabet;
     private ArrayList<String> listTransitions;
 
     public PanelInfo() {
+<<<<<<< HEAD
         this.panelInfoFeatures();
         this.panelInfoInstances();
         this.panelInfoInternalContent();
@@ -79,6 +83,9 @@ public class PanelInfo extends JScrollPane {
                 + "<br/>Σ = {" + this.getString(info, this.listAlphabet) + "}";
 
         return info;
+=======
+        this.setBackground(Color.WHITE);
+>>>>>>> 6503ca7608f99f62a997cd06eaeb812fc27545cc
     }
 
 

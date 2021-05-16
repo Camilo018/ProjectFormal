@@ -36,6 +36,24 @@ public class DataPanelStart extends JPanel {
         return  buttonBound;
     }
 
+<<<<<<< HEAD
+=======
+    private ButtonBound buttonDelete(ActionListener actionListener) {
+        ButtonBound buttonDelete = new ButtonBound("Eliminar", actionListener, MainActivity.DELETE.toString());
+        return buttonDelete;
+    }
+
+    private ButtonBound buttonAdd(ActionListener actionListener) {
+        ButtonBound buttonAdd = new ButtonBound("Añadir", actionListener, MainActivity.ADD.toString());
+        return buttonAdd;
+    }
+
+    private JPanel actionSelected() {
+        JPanel actionSelected = new JPanel(new GridLayout(1,2));
+        actionSelected.setOpaque(false);
+        return actionSelected;
+    }
+>>>>>>> 6503ca7608f99f62a997cd06eaeb812fc27545cc
 
     private void dataPanelStartFeatures() {
         this.setOpaque(false);

@@ -1,13 +1,15 @@
 package view;
 
-import controller.MainActivity;
 import utils.Constants;
 
 import javax.swing.*;
 import java.awt.*;
+<<<<<<< HEAD
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Vector;
+=======
+>>>>>>> 6503ca7608f99f62a997cd06eaeb812fc27545cc
 
 public class DataPanelEnd extends JPanel {
 
@@ -29,11 +31,17 @@ public class DataPanelEnd extends JPanel {
     private ButtonBound buttonDelete;
     private JPanel actionSelected;
 
+<<<<<<< HEAD
 
 
     public DataPanelEnd(ArrayList<String> states, ArrayList<String> alphabet, ActionListener actionListener) {
         this.dataPanelEndFeatures();
         this.dataPanelEndInstances(states, alphabet, actionListener);
+=======
+    public DataPanelEnd() {
+        this.dataPanelEndFeatures();
+        this.dataPanelEndInstances();
+>>>>>>> 6503ca7608f99f62a997cd06eaeb812fc27545cc
         this.dataPanelEndInternalContent();
     }
 
@@ -42,17 +50,25 @@ public class DataPanelEnd extends JPanel {
         this.setOpaque(false);
     }
 
+<<<<<<< HEAD
     private void dataPanelEndInstances (ArrayList<String> states, ArrayList<String> alphabet, ActionListener actionListener) {
         this.initialState = 0;
         this.finalState = 0;
         this.stateStartModel = new DefaultComboBoxModel();
         this.stateEndModel = new DefaultComboBoxModel();
         this.transitionModel = new DefaultComboBoxModel();
+=======
+    private void dataPanelEndInstances () {
+>>>>>>> 6503ca7608f99f62a997cd06eaeb812fc27545cc
         this.typeState = this.typeState();
-        this.buttonInitialState = this.buttonInitialState(actionListener);
-        this.buttonFinalState = this.buttonFinalState(actionListener);
+        this.buttonInitialState = this.buttonInitialState();
+        this.buttonFinalState = this.buttonFinalState();
         this.fieldState = this.fieldState();
         this.fieldAlphabet = this.fieldAlphabet();
+<<<<<<< HEAD
+=======
+        this.buttonBoundValidate = this.buttonBoundValidate();
+>>>>>>> 6503ca7608f99f62a997cd06eaeb812fc27545cc
         this.panelTransition = this.panelTransition();
         this.stateStart = this.stateStart();
         this.stateEnd = this.stateEnd();
@@ -78,6 +94,7 @@ public class DataPanelEnd extends JPanel {
         return actionSelected;
     }
 
+<<<<<<< HEAD
     private ButtonBound buttonFinalState(ActionListener actionListener) {
         ButtonBound buttonFinalState = new ButtonBound("Final", actionListener, MainActivity.FINAL.toString());
         buttonFinalState.setBorderPainted(false);
@@ -89,6 +106,15 @@ public class DataPanelEnd extends JPanel {
         ButtonBound buttonInitialState = new ButtonBound("Inicial", actionListener, MainActivity.INITIAL.toString());
         buttonInitialState.setBorderPainted(false);
 
+=======
+    private ButtonBound buttonFinalState() {
+        ButtonBound buttonFinalState = new ButtonBound("Final");
+        return  buttonFinalState;
+    }
+
+    private ButtonBound buttonInitialState() {
+        ButtonBound buttonInitialState = new ButtonBound("Inicial");
+>>>>>>> 6503ca7608f99f62a997cd06eaeb812fc27545cc
         return  buttonInitialState;
     }
 
@@ -119,7 +145,14 @@ public class DataPanelEnd extends JPanel {
         return  stateStart;
     }
 
+<<<<<<< HEAD
 
+=======
+    private ButtonBound buttonBoundValidate() {
+        ButtonBound buttonBound = new ButtonBound("Validar palabra");
+        return  buttonBound;
+    }
+>>>>>>> 6503ca7608f99f62a997cd06eaeb812fc27545cc
 
     private TextFieldBound fieldAlphabet() {
         TextFieldBound fieldAlphabet = new TextFieldBound("Ingrese un alfabeto");
