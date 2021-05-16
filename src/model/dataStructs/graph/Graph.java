@@ -37,7 +37,6 @@ public class Graph<T,V>{
         LinkedList<Association<T,V>> associationsAux = aux.get(i).getAssociations();
         for (Association association: associationsAux) {
             if (association.getMagnitude().equals(magnitude)){
-                System.out.println(i);
                 subGraph.add(aux.get(i));
             }
         }
@@ -76,6 +75,7 @@ public class Graph<T,V>{
         }
         return contains;
     }
+
 
     public LinkedList<GraphNode<T, V>> getGraph() {
         return graph;
