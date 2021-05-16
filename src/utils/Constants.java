@@ -8,18 +8,17 @@ public class Constants {
 
     public static final int MIN_WIDTH = 720 ;
     public static final int MIN_HEIGHT = 480;
-    public static final String START_COLOR = "#2F2547";
-    public static final String END_COLOR = "#4B4067";
-    public static final String TITTLE_COLOR = "#01C8E4";
+    public static final String TITTLE_COLOR = "#FF1A43";
     public static final int MIN_WIDTH_PHONE = 400;
     public static final int MIN_HEIGHT_PHONE = 800;
+    public static Color COLOR_APP_DARK = new Color(37,36,39,200);
 
     public static Font fontProject(int type,int Size) {
         Font fontProject = new Font("Montserrat", type, Size);
         return fontProject;
     }
 
-    private static JLabel getSpace(int top, int left, int bottom, int right) {
+    public static JLabel getSpace(int top, int left, int bottom, int right) {
         JLabel getSpace = new JLabel();
         getSpace.setBorder(new EmptyBorder(top, left, bottom, right));
         return getSpace;

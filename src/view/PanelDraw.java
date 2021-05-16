@@ -1,5 +1,7 @@
 package view;
 
+import utils.Constants;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -19,7 +21,7 @@ public class PanelDraw extends JPanel {
         this.setOpaque(false);
     }
     private void panelDrawInternalContent() {
-        this.add(this.panelTittle, BorderLayout.PAGE_START);
+        this.add(Constants.insidePanel(this.panelTittle, 60,0,0,0,"#000000", false), BorderLayout.PAGE_START);
         this.add(this.automataDraw, BorderLayout.CENTER);
     }
     private void panelDrawInstances() {

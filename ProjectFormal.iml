@@ -9,5 +9,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="flatlaf-demo-0.42" level="project" />
     <orderEntry type="library" name="KGradientPanel" level="project" />
+    <orderEntry type="library" name="flatlaf-1.1.2" level="project" />
+    <orderEntry type="library" name="flatlaf-intellij-themes-1.1.2" level="project" />
+    <orderEntry type="library" name="flatlaf-extras-1.1.2" level="project" />
   </component>
 </module>

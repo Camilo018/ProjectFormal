@@ -1,6 +1,5 @@
 package view;
 
-import keeptoo.KGradientPanel;
 import utils.Constants;
 
 import javax.swing.*;
@@ -9,6 +8,7 @@ import java.awt.*;
 public class DataPanel extends JPanel {
 
     private MainDataPanel mainDataPanel;
+
 
     public DataPanel() {
         this.dataPanelInstances();
@@ -22,7 +22,7 @@ public class DataPanel extends JPanel {
     }
 
     private void dataPanelInternalContent() {
-        this.add(Constants.insidePanel(this.mainDataPanel, 80, 30, 80, 30, "#000000", false), BorderLayout.CENTER);
+        this.add(Constants.insidePanel(this.mainDataPanel, 80, 50, 80, 50, "#000000", false), BorderLayout.CENTER);
     }
 
 
