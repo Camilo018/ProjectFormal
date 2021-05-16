@@ -4,12 +4,12 @@ public class State {
 
     private  String value;
     private boolean finalState;
-    private boolean initalState;
+    private boolean initialState;
 
-    public State(String value, boolean finalState, boolean initalState) {
+    public State(String value, boolean finalState, boolean initialState) {
         this.value = value;
         this.finalState = finalState;
-        this.initalState = initalState;
+        this.initialState = initialState;
     }
 
     public State() {
@@ -28,10 +28,10 @@ public class State {
     }
 
     public boolean isInitialState() {
-        return initalState;
+        return initialState;
     }
 
     public void setInitialState(boolean initalState) {
-        this.initalState = initalState;
+        this.initialState = initalState;
     }
 }
