@@ -31,7 +31,7 @@ public class State {
         return initialState;
     }
 
-    public void setInitialState(boolean initalState) {
-        this.initialState = initalState;
+    public void setInitialState(boolean initialState) {
+        this.initialState = initialState;
     }
 }
