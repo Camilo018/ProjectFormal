@@ -4,6 +4,7 @@ import utils.Constants;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 
 public class MainDataPanel extends JPanel {
@@ -14,9 +15,9 @@ public class MainDataPanel extends JPanel {
     private DataPanelEnd dataPanelEnd;
 
 
-    public MainDataPanel() {
+    public MainDataPanel(ActionListener actionListener) {
         this.mainDataPanelFeatures();
-        this.mainDataPanelInstances();
+        this.mainDataPanelInstances(actionListener);
         this.mainDataPanelInternalContent();
     }
 
@@ -28,10 +29,10 @@ public class MainDataPanel extends JPanel {
         this.setOpaque(false);
     }
 
-    private void mainDataPanelInstances() {
+    private void mainDataPanelInstances(ActionListener actionListener) {
         this.backGroundImage = backGroundImage();
-        this.dataPanelStart = new DataPanelStart();
-        this.dataPanelEnd = new DataPanelEnd();
+        this.dataPanelStart = new DataPanelStart(actionListener);
+        this.dataPanelEnd = new DataPanelEnd(actionListener);
     }
 
     private void mainDataPanelInternalContent() {

@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.*;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
@@ -11,8 +12,8 @@ public class MainPanel extends JPanel {
     private Image resizeImage;
 
 
-    public MainPanel() {
-        this.mainPanelInstances();
+    public MainPanel(ActionListener actionListener) {
+        this.mainPanelInstances(actionListener);
         this.mainPanelFeatures();
         this.mainPanelInternalContent();
     }
@@ -22,9 +23,9 @@ public class MainPanel extends JPanel {
         this.setBackground(Color.decode("#FAFAFA"));
     }
 
-    public void mainPanelInstances() {
+    public void mainPanelInstances(ActionListener actionListener) {
         this.backGroundImage();
-        this.dataPanel = new DataPanel();
+        this.dataPanel = new DataPanel(actionListener);
         this.panelDraw = new PanelDraw();
     }
 
