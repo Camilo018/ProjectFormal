@@ -4,14 +4,15 @@ import utils.Constants;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class DataPanel extends JPanel {
 
     private MainDataPanel mainDataPanel;
 
 
-    public DataPanel() {
-        this.dataPanelInstances();
+    public DataPanel(ActionListener actionListener) {
+        this.dataPanelInstances(actionListener);
         this.dataPanelFeatures();
         this.dataPanelInternalContent();
     }
@@ -26,8 +27,8 @@ public class DataPanel extends JPanel {
     }
 
 
-    private void dataPanelInstances() {
-        this.mainDataPanel = new MainDataPanel();
+    private void dataPanelInstances(ActionListener actionListener) {
+        this.mainDataPanel = new MainDataPanel(actionListener);
     }
 
 

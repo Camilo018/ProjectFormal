@@ -11,7 +11,7 @@ public class MainView extends JFrame {
     private MainPanel mainPanel;
 
     public MainView(ActionListener actionListener) throws HeadlessException {
-        this.mainViewInstances();
+        this.mainViewInstances(actionListener);
         this.mainViewFeatures();
         this.mainViewInternalContent();
         this.setVisible(true);
@@ -27,8 +27,8 @@ public class MainView extends JFrame {
 
     }
 
-    private void mainViewInstances () {
-        this.mainPanel = new MainPanel();
+    private void mainViewInstances (ActionListener actionListener) {
+        this.mainPanel = new MainPanel(actionListener);
     }
 
     private void mainViewInternalContent () {
