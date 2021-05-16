@@ -19,6 +19,9 @@ public class Graph<T,V>{
             }
         }
     }
+    private void add (GraphNode<T, V> node){
+        this.graph.add(node);
+    }
     public void removeAssociation(T data, T destinationData, V magnitude) throws IndexOutOfBoundsException{
         for (GraphNode node: graph) {
             if (node.getData().equals(data) && contains(destinationData)){
@@ -27,7 +30,26 @@ public class Graph<T,V>{
             }
         }
     }
-    public void removeNode(T data) {
+    public Graph <T, V> getAdjacentByMagnitude(T data,V magnitude){
+        LinkedList<GraphNode<T,V>> aux = this.graph;
+        Graph <T, V> subGraph = new Graph<>();
+        int i = 0;
+        for (GraphNode node: aux) {
+            if (node.getData().equals(data)){
+                i = aux.indexOf(node);
+                break;
+            }
+        }
+        LinkedList<Association<T,V>> associationsAux = aux.get(i).getAssociations();
+        for (Association association: associationsAux) {
+            if (association.getMagnitude().equals(magnitude)){
+                System.out.println(i);
+                subGraph.add(aux.get(i));
+            }
+        }
+        return subGraph;
+    }
+    public void removeNode(T data) throws IndexOutOfBoundsException {
         int i = 0;
         for (GraphNode node: this.graph) {
             node.removeAssociation(data);
