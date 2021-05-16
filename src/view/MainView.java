@@ -21,6 +21,10 @@ public class MainView extends JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setMinimumSize(new Dimension(Constants.MIN_WIDTH, Constants.MIN_HEIGHT));
+        this.setBackground(Color.decode("#FAFAFA"));
+        this.setDefaultLookAndFeelDecorated(true);
+        this.setTitle("Automatas finitos no deterministas");
+
     }
 
     private void mainViewInstances () {

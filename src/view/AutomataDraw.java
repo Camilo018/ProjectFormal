@@ -12,7 +12,7 @@ public class AutomataDraw extends JPanel {
     }
 
     private void automataDrawFeatures () {
-        this.setBackground(Color.BLACK);
+        this.setOpaque(false);
     }
     private void automataDrawInstances () {
 

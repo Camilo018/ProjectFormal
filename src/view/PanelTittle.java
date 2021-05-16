@@ -18,12 +18,14 @@ public class PanelTittle extends JPanel {
 
     private void panelTittleFeatures() {
         this.setOpaque(false);
-        this.setLayout(new GridLayout(2,1));
+        this.setLayout(new GridLayout(2, 1));
     }
+
     private void panelTittleInternalContent() {
         this.add(this.mainTitle);
         this.add(this.secondTittle);
     }
+
     private void panelTittleInstances() {
         this.mainTitle = mainTitleFeautures();
         this.secondTittle = secondTittleFeatures();
@@ -32,21 +34,20 @@ public class PanelTittle extends JPanel {
     private JLabel mainTitleFeautures() {
         JLabel mainTitle = new JLabel();
         mainTitle.setText("GENERANDO");
-        mainTitle.setForeground(Color.decode(Constants.TITTLE_COLOR));
-        mainTitle.setFont(Constants.fontProject(Font.BOLD, 85));
+        mainTitle.setForeground(Color.decode("#ca2b3f"));
+        mainTitle.setFont(Constants.fontProject(Font.PLAIN, 85));
         mainTitle.setHorizontalAlignment(JLabel.CENTER);
-        return  mainTitle;
+        return mainTitle;
     }
 
     private JLabel secondTittleFeatures() {
         JLabel secondTittle = new JLabel();
         secondTittle.setText("AUTOMATAS");
-        secondTittle.setForeground(Color.WHITE);
+        secondTittle.setForeground(Color.decode("#2e112d"));
         secondTittle.setFont(Constants.fontProject(Font.PLAIN, 70));
         secondTittle.setHorizontalAlignment(JLabel.CENTER);
-        return  secondTittle;
+        return secondTittle;
     }
-
 
 
 }
