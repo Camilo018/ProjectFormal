@@ -34,7 +34,7 @@ public class MainController implements ActionListener {
                 this.deleteState();
                 break;
             case ADD_TRANSITION:
-                this.addTranstion();
+                this.addTransition();
                 break;
             case DELETE_ALPHABET:
                 this.deleteAlphabet();
@@ -43,12 +43,17 @@ public class MainController implements ActionListener {
                 this.deleteTransition();
                 break;
 
-            case DELETE:
+            case DELETE_ELEMENT:
                 break;
-            case ADD:
+            case ADD_ELEMENT:
+                this.addElement();
                 break;
                 
         }
+    }
+
+    private void addElement() {
+        System.out.println("Entro");
     }
 
     private void deleteTransition() {
@@ -58,7 +63,7 @@ public class MainController implements ActionListener {
         
     }
 
-    private void addTranstion() {
+    private void addTransition() {
         
     }
 
