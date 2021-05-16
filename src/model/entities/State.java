@@ -27,11 +27,11 @@ public class State {
         this.finalState = finalState;
     }
 
-    public boolean isInitalState() {
+    public boolean isInitialState() {
         return initalState;
     }
 
-    public void setInitalState(boolean initalState) {
+    public void setInitialState(boolean initalState) {
         this.initalState = initalState;
     }
 }

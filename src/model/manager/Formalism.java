@@ -1,7 +1,6 @@
 package model.manager;
 
 import model.entities.State;
-import model.entities.StatusType;
 import model.entities.Transition;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class Formalism {
     public State getInitialState(){
         State initialState = new State();
         for (State state : states) {
-            if (state.isInitalState()){
+            if (state.isInitialState()){
                 initialState = state;
                 break;
             }
