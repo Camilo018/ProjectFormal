@@ -48,12 +48,12 @@ public class DataPanelStart extends JPanel {
     }
 
     private ButtonBound buttonDelete(ActionListener actionListener) {
-        ButtonBound buttonDelete = new ButtonBound("Eliminar", actionListener, MainActivity.DELETE_ELEMENT.toString());
+        ButtonBound buttonDelete = new ButtonBound("Eliminar", actionListener, MainActivity.DELETE.toString());
         return buttonDelete;
     }
 
     private ButtonBound buttonAdd(ActionListener actionListener) {
-        ButtonBound buttonAdd = new ButtonBound("Añadir", actionListener, MainActivity.ADD_ELEMENT.toString());
+        ButtonBound buttonAdd = new ButtonBound("Añadir", actionListener, MainActivity.ADD.toString());
         return buttonAdd;
     }
 

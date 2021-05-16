@@ -1,11 +1,9 @@
 package view;
 
-import controller.MainActivity;
 import utils.Constants;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class DataPanelEnd extends JPanel {
 
@@ -20,9 +18,9 @@ public class DataPanelEnd extends JPanel {
     private JPanel panelTransition;
     private JPanel typeState;
 
-    public DataPanelEnd(ActionListener actionListener) {
+    public DataPanelEnd() {
         this.dataPanelEndFeatures();
-        this.dataPanelEndInstances(actionListener);
+        this.dataPanelEndInstances();
         this.dataPanelEndInternalContent();
     }
 
@@ -31,26 +29,26 @@ public class DataPanelEnd extends JPanel {
         this.setOpaque(false);
     }
 
-    private void dataPanelEndInstances (ActionListener actionListener) {
+    private void dataPanelEndInstances () {
         this.typeState = this.typeState();
-        this.buttonInitialState = this.buttonInitialState(actionListener);
-        this.buttonFinalState = this.buttonFinalState(actionListener);
+        this.buttonInitialState = this.buttonInitialState();
+        this.buttonFinalState = this.buttonFinalState();
         this.fieldState = this.fieldState();
         this.fieldAlphabet = this.fieldAlphabet();
-        this.buttonBoundValidate = this.buttonBoundValidate(actionListener);
+        this.buttonBoundValidate = this.buttonBoundValidate();
         this.panelTransition = this.panelTransition();
         this.stateStart = this.stateStart();
         this.stateEnd = this.stateEnd();
         this.transition = this.transition();
     }
 
-    private ButtonBound buttonFinalState(ActionListener actionListener) {
-        ButtonBound buttonFinalState = new ButtonBound("Final", actionListener, null);
+    private ButtonBound buttonFinalState() {
+        ButtonBound buttonFinalState = new ButtonBound("Final");
         return  buttonFinalState;
     }
 
-    private ButtonBound buttonInitialState(ActionListener actionListener) {
-        ButtonBound buttonInitialState = new ButtonBound("Inicial", actionListener, null);
+    private ButtonBound buttonInitialState() {
+        ButtonBound buttonInitialState = new ButtonBound("Inicial");
         return  buttonInitialState;
     }
 
@@ -81,8 +79,8 @@ public class DataPanelEnd extends JPanel {
         return  stateStart;
     }
 
-    private ButtonBound buttonBoundValidate(ActionListener actionListener) {
-        ButtonBound buttonBound = new ButtonBound("Validar palabra", actionListener, MainActivity.VALIDATE_WORD.toString());
+    private ButtonBound buttonBoundValidate() {
+        ButtonBound buttonBound = new ButtonBound("Validar palabra");
         return  buttonBound;
     }
 
