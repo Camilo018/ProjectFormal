@@ -30,9 +30,75 @@ public class Formalism {
             return true;
         }
     }
+    public State getInitialState(){
+        State initialState = null;
+        for (State state:states) {
+            if (state.isInitialState()){
+                initialState = state;
+                break;
+            }
+        }
+        return initialState;
+    }
+    public ArrayList<State> getFinalStates(){
+        ArrayList<State> finalStates = new ArrayList<>();
+        for (State state:states) {
+            if (state.isFinalState()){
+                finalStates.add(state);
+            }
+        }
+        return finalStates;
+    }
+    public boolean haveFinalStates(){
+        boolean haveFinal = false;
+        for (State state:states) {
+            if (state.isFinalState()){
+                haveFinal=true;
+                break;
+            }
+        }
+        return haveFinal;
+    }
 
-    public void addTransition(Transition transition) {
-        transitions.add(transition);
+    public void addTransition(String initial, String symbol, String result) {
+        State initialAux = null;
+        State resultAux = null;
+        if (existState(initial) && existState(result) && verifyTransition(initial, symbol, result)){
+            for (State state : this.states) {
+                if (state.getValue().equals(initial)){
+                    initialAux = state.getStateByValue(initial);
+                }
+                if (state.getValue().equals(result)){
+                    resultAux = state.getStateByValue(result);
+                }
+            }
+            transitions.add(new Transition(initialAux,symbol,resultAux));
+        }
+
+    }
+    private boolean verifyTransition(String initial, String symbol, String result){
+        boolean transitionVerifier = false;
+        for (Transition inListTransition:this.transitions) {
+                if (inListTransition.getInitial().getValue().equals(initial) &&
+                        inListTransition.getSymbol().equals(symbol) &&
+                        inListTransition.getResult().getValue().equals(result)) {
+                    transitionVerifier = true;
+
+                    break;
+                }
+            }
+        System.out.println(transitionVerifier);
+        return transitionVerifier;
+    }
+    private boolean existState(String state){
+        boolean exist = false;
+        for (State inListState : this.states) {
+            if (inListState.getValue().equals(state)){
+                exist = true;
+                break;
+            }
+        }
+        return exist;
     }
 
     public boolean haveInitial() {
@@ -66,10 +132,10 @@ public class Formalism {
 
     }
 
-    public ArrayList<Transition> getTransitionBySimbol(String simbol, State state) {
+    public ArrayList<Transition> getTransitionBySymbol(String simbol, State state) {
         ArrayList<Transition> result = new ArrayList<>();
         for (Transition transition : transitions) {
-            if (transition.getInitial() == state && transition.getSimbol().equals(simbol))
+            if (transition.getInitial() == state && transition.getSymbol().equals(simbol))
                 result.add(transition);
         }
         return result;

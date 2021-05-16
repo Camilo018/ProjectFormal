@@ -22,7 +22,7 @@ public class Transition {
         return result;
     }
 
-    public String getSimbol() {
+    public String getSymbol() {
         return symbol;
     }
 }

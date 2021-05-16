@@ -19,6 +19,14 @@ public class State {
         return value;
     }
 
+    public State getStateByValue(String value){
+        State state= null;
+        if (this.value.equals(value)){
+            state = this;
+        }
+        return state;
+    }
+
     public boolean isFinalState() {
         return finalState;
     }

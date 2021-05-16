@@ -41,7 +41,7 @@ public class Automaton {
     }
     private void addTransitions () throws IndexOutOfBoundsException{
         for (Transition transition:formalism.getTransitions()) {
-            automatonGraph.removeAssociation(transition.getInitial(),transition.getResult(),transition.getSimbol());
+            automatonGraph.removeAssociation(transition.getInitial(),transition.getResult(),transition.getSymbol());
         }
     }
     public boolean checkWord (LinkedList <String> word){
