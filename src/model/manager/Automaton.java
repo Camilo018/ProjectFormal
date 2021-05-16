@@ -2,31 +2,49 @@ package model.manager;
 
 
 import model.dataStructs.graph.Graph;
-import model.entities.Status;
+import model.entities.State;
+import model.entities.Transition;
+
+import java.util.LinkedList;
 
 public class Automaton {
 
     private Formalism formalism;
-    private Graph<Status, String> automatonGraph;
+    private Graph<State, String> automatonGraph;
 
     public Automaton() {
         this.formalism = new Formalism();
+        addStates();
+        addTransitions();
     }
 
-    public void addState (Status status) {
-        automatonGraph.add(status);
+    public void addState (State state) {
+        automatonGraph.add(state);
     }
 
-    public void addTransitions (Status originStatus, String symbol,Status destinationStatus) throws IndexOutOfBoundsException{
-        automatonGraph.addAssociation(originStatus, destinationStatus, symbol);
+    public void addTransitions (State originState, String symbol, State destinationState) throws IndexOutOfBoundsException{
+        automatonGraph.addAssociation(originState, destinationState, symbol);
     }
 
-    public void removeState (Status status) throws IndexOutOfBoundsException{
-        automatonGraph.removeNode(status);
+    public void removeState (State state) throws IndexOutOfBoundsException{
+        automatonGraph.removeNode(state);
     }
 
-    public void removeTransition(Status originStatus, String symbol, Status destinationStatus) throws  IndexOutOfBoundsException{
-        automatonGraph.removeAssociation(originStatus,destinationStatus,symbol);
+    public void removeTransition(State originState, String symbol, State destinationState) throws  IndexOutOfBoundsException{
+        automatonGraph.removeAssociation(originState, destinationState,symbol);
     }
-
+    private void addStates (){
+        this.automatonGraph = new Graph<>();
+        for (State state :formalism.getStates()) {
+            this.automatonGraph.add(state);
+        }
+    }
+    private void addTransitions () throws IndexOutOfBoundsException{
+        for (Transition transition:formalism.getTransitions()) {
+            automatonGraph.removeAssociation(transition.getInitial(),transition.getResult(),transition.getSimbol());
+        }
+    }
+    public boolean checkWord (LinkedList <String> word){
+        return true;
+    }
 }

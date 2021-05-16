@@ -1,24 +1,22 @@
 package model.entities;
 
-import model.entities.Status;
-
 public class Transition {
 
-    private Status initial;
+    private State initial;
     private  String symbol;
-    private Status result;
+    private State result;
 
-    public Transition(Status initial, String symbol, Status result) {
+    public Transition(State initial, String symbol, State result) {
         this.initial = initial;
         this.symbol = symbol;
         this.result = result;
     }
 
-    public Status getInitial() {
+    public State getInitial() {
         return initial;
     }
 
-    public Status getResult() {
+    public State getResult() {
         return result;
     }
 

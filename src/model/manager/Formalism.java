@@ -1,6 +1,6 @@
 package model.manager;
 
-import model.entities.Status;
+import model.entities.State;
 import model.entities.StatusType;
 import model.entities.Transition;
 
@@ -8,37 +8,37 @@ import java.util.ArrayList;
 
 public class Formalism {
 
-    private ArrayList<Status> statuses;
+    private ArrayList<State> states;
     private ArrayList <String>  symbols;
     private ArrayList<Transition> transitions;
 
     public Formalism() {
-        statuses = new ArrayList<>();
+        states = new ArrayList<>();
         symbols = new ArrayList<>();
         transitions = new ArrayList<>();
     }
-    public Status getInitialStatus(){
-        Status initialStatus = new Status();
-        for (Status status:statuses) {
-            if (status.getStatusType()== StatusType.INITIAL){
-                initialStatus = status;
+    public State getInitialState(){
+        State initialState = new State();
+        for (State state : states) {
+            if (state.isInitalState()){
+                initialState = state;
                 break;
             }
         }
-        return initialStatus;
+        return initialState;
     }
-    public ArrayList<Status> getFinalStatus(){
-        ArrayList<Status> finalStatuses = new ArrayList<>();
-        for (Status status:statuses) {
-            if (status.getStatusType()== StatusType.INITIAL){
-                finalStatuses.add(status);
+    public ArrayList<State> getFinalState(){
+        ArrayList<State> finalStates = new ArrayList<>();
+        for (State state : states) {
+            if (state.isFinalState()){
+                finalStates.add(state);
             }
         }
-        return finalStatuses;
+        return finalStates;
     }
 
-    public ArrayList<Status> getStatuses() {
-        return statuses;
+    public ArrayList<State> getStates() {
+        return states;
     }
 
     public ArrayList<String> getSymbols() {
